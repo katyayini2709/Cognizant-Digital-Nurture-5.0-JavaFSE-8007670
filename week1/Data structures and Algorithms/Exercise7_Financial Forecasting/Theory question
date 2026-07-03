@@ -1,9 +1,11 @@
 Exercise 7: Financial Forecasting – Theory part
+
 1. Understanding Recursive Algorithms
 
 Recursion is a programming technique in which a function calls itself to solve a problem by breaking it into smaller and similar sub-problems. Every recursive function must have a base case to stop the recursion and prevent infinite execution. Recursion is commonly used in problems such as factorial calculation, Fibonacci series, tree traversal, and financial forecasting.
 
 In financial forecasting, recursion calculates the future value by applying the growth rate repeatedly for each year until the specified number of years is completed.
+
 
 2. Time Complexity
 
@@ -11,6 +13,8 @@ The recursive algorithm makes one recursive call for each year. If the number of
 
 Time Complexity: O(n)
 Space Complexity: O(n) because each recursive call is stored in the call stack until the base case is reached.
+
+
 3. Optimization
 
 Although recursion makes the code simple and easy to understand, it requires additional memory for each recursive call. For a large number of recursive calls, this can reduce performance and may lead to a stack overflow.
