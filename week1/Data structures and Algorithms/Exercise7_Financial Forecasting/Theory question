@@ -1,32 +1,26 @@
-# Exercise 7: Financial Forecasting – Theory
+Exercise 7: Financial Forecasting – Theory part
+1. Understanding Recursive Algorithms
 
-## 1. Understanding Recursive Algorithms
+Recursion is a programming technique in which a function calls itself to solve a problem by breaking it into smaller and similar sub-problems. Every recursive function must have a base case to stop the recursion and prevent infinite execution. Recursion is commonly used in problems such as factorial calculation, Fibonacci series, tree traversal, and financial forecasting.
 
-Recursion is a programming technique in which a function calls itself to solve a problem by breaking it into smaller and similar sub-problems. Every recursive function must contain a **base case** that stops the recursive calls and prevents infinite execution. Recursion is widely used in problems such as factorial calculation, Fibonacci series, tree traversal, and financial forecasting.
+In financial forecasting, recursion calculates the future value by applying the growth rate repeatedly for each year until the specified number of years is completed.
 
-In financial forecasting, recursion can be used to calculate the future value by applying the growth rate repeatedly for each year until the specified number of years is completed.
+2. Time Complexity
 
-## 2. Time Complexity
+The recursive algorithm makes one recursive call for each year. If the number of years is n, the function executes n times.
 
-The recursive algorithm performs one recursive call for every year in the forecast. Therefore, if the number of years is **n**, the function is executed **n** times.
+Time Complexity: O(n)
+Space Complexity: O(n) because each recursive call is stored in the call stack until the base case is reached.
+3. Optimization
 
-* **Time Complexity:** **O(n)**
-* **Space Complexity:** **O(n)** because each recursive call is stored in the call stack until the base case is reached.
+Although recursion makes the code simple and easy to understand, it requires additional memory for each recursive call. For a large number of recursive calls, this can reduce performance and may lead to a stack overflow.
 
-## 3. Optimization
+An optimized solution is to use an iterative approach (loop) instead of recursion. The iterative method performs the same calculation while using constant memory.
 
-Although recursion makes the solution simple and easy to understand, it increases memory usage because every recursive call is stored in the system stack. For a large number of recursive calls, this may reduce performance and can even lead to a stack overflow.
+Advantages of the Iterative Approach:
 
-An optimized solution is to use an **iterative approach** with a loop instead of recursion. The iterative method performs the same calculation while using constant memory.
-
-**Advantages of the Iterative Approach:**
-
-* Reduces memory consumption.
-
-* Eliminates recursive call overhead.
-
-* More suitable for large input values.
-
-* **Time Complexity:** **O(n)**
-
-* **Space Complexity:** **O(1)**
+Uses less memory.
+Avoids recursive call overhead.
+More efficient for large input values.
+Time Complexity: O(n)
+Space Complexity: O(1)
