@@ -1,0 +1,49 @@
+Hands-on 4: Difference Between JPA, Hibernate, and Spring Data JPA
+
+1. Java Persistence API (JPA)
+•	JPA (Java Persistence API) is a specification used to manage data between Java applications and relational databases. 
+•	It defines a standard set of interfaces and annotations for performing database operations. 
+•	JPA itself does not provide any implementation; it only specifies the rules. 
+•	To work with a database, JPA requires an implementation such as Hibernate. 
+
+2. Hibernate
+•	Hibernate is an Object Relational Mapping (ORM) framework and one of the most popular implementations of JPA. 
+•	It maps Java objects to database tables and handles database operations automatically. 
+•	Hibernate provides all the features defined by JPA along with additional features like caching, lazy loading, and HQL (Hibernate Query Language). 
+•	When using Hibernate directly, developers often need to manage sessions and transactions manually. 
+
+3. Spring Data JPA
+•	Spring Data JPA is a module of the Spring Framework built on top of JPA. 
+•	It simplifies database programming by reducing the amount of code developers need to write. 
+•	It provides built-in repository interfaces such as JpaRepository, which automatically implement common database operations. 
+•	Spring Data JPA works seamlessly with Spring Boot and makes application development faster and easier. 
+
+Code Comparison
+
+Using Hibernate:
+In Hibernate, the developer is responsible for opening a session, beginning a transaction, saving the object, committing the transaction, and finally closing the session.
+
+Session session = sessionFactory.openSession();
+Transaction transaction = session.beginTransaction();
+
+session.save(employee);
+
+transaction.commit();
+session.close();
+
+Using Spring Data JPA:
+In Spring Data JPA, there is no need to write the implementation for common database operations. Extending JpaRepository provides methods like save(), findAll(), findById(), and delete() automatically.
+
+public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
+
+}
+@Autowired
+private EmployeeRepository employeeRepository;
+
+public void addEmployee(Employee employee) {
+    employeeRepository.save(employee);
+}
+
+Conclusion:
+JPA is a specification that defines the standard for object-relational mapping in Java. Hibernate is an implementation of JPA that performs the actual database operations. Spring Data JPA is built on top of JPA and Hibernate, making database access much simpler by providing ready-made repository interfaces and reducing boilerplate code. Together, these technologies help developers build database-driven applications efficiently.
+
